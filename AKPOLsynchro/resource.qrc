@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/app">
+    <file>icons/app/Treetog-Junior-Sync.ico</file>
+  </qresource>
+</RCC>
