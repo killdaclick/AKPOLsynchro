@@ -168,3 +168,17 @@ QStringList Utility::findAll( const QString &name, const QString &path, bool rec
 
 	return found;
 }
+
+QStringList Utility::getRemovableMedia( void )
+{
+	auto drives = QDir::drives();
+	QStringList removable;
+	for( QFileInfoList::iterator itr = drives.begin(); itr != drives.end(); ++itr )
+	{
+		QString removablePath = itr->absolutePath();
+		UINT type = GetDriveType( (LPCWSTR)removablePath.utf16() );
+		if( type == DRIVE_REMOVABLE )
+			removable.push_back(removablePath);
+	}
+	return removable;
+}

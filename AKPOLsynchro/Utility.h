@@ -4,6 +4,7 @@
 #include <QDir>
 #include <QFile>
 #include <QRegExp>
+#include <Windows.h>
 
 #pragma once
 class Utility
@@ -17,5 +18,6 @@ public:
 	static bool Utility::clearDir(const QString &dirPath);
 	static QString Utility::find( const QString &name, const QString &path, bool recursive = false, QDir::Filters filter=(QDir::Dirs | QDir::Files) );
 	static QStringList Utility::findAll( const QString &name, const QString &path, bool recursive = false, QDir::Filters filter=(QDir::Dirs | QDir::Files) );
+	static QStringList getRemovableMedia( void );
 };
 
